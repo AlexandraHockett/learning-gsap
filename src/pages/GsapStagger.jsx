@@ -1,5 +1,25 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapStagger = () => {
   // TODO: Implement the gsap.stagger() method
+  useGSAP(() => {
+  gsap.to('.stagger-box', {
+    y: 250,
+    rotation: 360,
+    borderRadius: '100%',
+    repeat: -1,
+    yoyo: true,
+    //stagger:
+    stagger:{
+      amount:1.5,
+      grid:[3, 1],
+      axis: 'y',
+      ease:'circ.inOut',
+      from: 'center',
+    }
+  })
+  }, [])
 
   return (
     <main>
@@ -32,13 +52,15 @@ const GsapStagger = () => {
 
       <div className="mt-20">
         <div className="flex gap-5">
-          <div className="w-20 h-20 bg-indigo-200 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-300 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-400 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-500 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-600 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-700 rounded-lg stagger-box" />
-          <div className="w-20 h-20 bg-indigo-800 rounded-lg stagger-box" />
+        <div className="w-20 h-20 bg-red-200 rounded-lg flex items-center justify-center stagger-box"><h1>A</h1></div>
+        <div className="w-20 h-20 bg-blue-300 rounded-lg flex items-center justify-center stagger-box"><h1 className="text-center">L</h1></div>
+        <div className="w-20 h-20 bg-green-400 rounded-lg flex items-center justify-center stagger-box"><h1 className="text-center">E</h1></div>
+        <div className="w-20 h-20 bg-yellow-500 rounded-lg flex items-center justify-center stagger-box"><h1 className="text-center">X</h1></div>
+        <div className="w-20 h-20 bg-purple-600 rounded-lg flex items-center justify-center stagger-box"><h1 className="text-center">A</h1></div>
+        <div className="w-20 h-20 bg-pink-700 rounded-lg flex items-center justify-center stagger-box"><h1 className="text-center">N</h1></div>
+        <div className="w-20 h-20 bg-teal-800 rounded-lg flex items-center justify-center stagger-box"><h1 className="text-center">D</h1></div>
+        <div className="w-20 h-20 bg-orange-900 rounded-lg flex items-center justify-center stagger-box"><h1 className="text-center">R</h1></div>
+        <div className="w-20 h-20 bg-lime-500 rounded-lg flex items-center justify-center stagger-box"><h1 className="text-center">A</h1></div>
         </div>
       </div>
     </main>
